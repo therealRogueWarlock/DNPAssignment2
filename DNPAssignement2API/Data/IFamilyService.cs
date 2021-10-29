@@ -7,7 +7,7 @@ namespace DNPAssignement2API.Data
     public interface IFamilyService
     {
         Task AddFamily(Family family);
-        Task RemoveFamily(Family family);
+        Task RemoveFamily(int familyId);
         Task<IList<Family>> GetFamilies();
         Task Update();
         Task<Family> GetFamily(int familyId);

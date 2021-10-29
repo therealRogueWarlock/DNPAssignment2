@@ -25,9 +25,9 @@ namespace Blazor_Authentication.Data.Impl
             _fileContext.SaveChanges();
         }
 
-        public async Task RemoveFamily(Family family)
+        public async Task RemoveFamily(int familyId)
         {
-            _fileContext.Families.Remove(family);
+            GetFamilies().Result.Remove(GetFamilies().Result.First(f => f.FamilyId == familyId));
             _fileContext.SaveChanges();
         }
 

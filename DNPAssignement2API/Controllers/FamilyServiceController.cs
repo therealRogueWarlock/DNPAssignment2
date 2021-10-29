@@ -37,6 +37,31 @@ namespace DNPAssignement2API.Controllers
             }
             
         }
+
+
+        [HttpDelete]
+        [Route("{familyId:int}")]
+        public async Task<ActionResult> removeFamily([FromRoute] int familyId )
+        {
+
+            try
+            {
+                
+                await familyService.RemoveFamily(familyId);
+
+                return Ok($"Familey with id: {familyId}");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
+            
+        }
+        
+        
         
         
         
