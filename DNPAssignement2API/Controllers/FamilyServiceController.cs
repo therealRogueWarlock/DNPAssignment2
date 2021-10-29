@@ -82,7 +82,24 @@ namespace DNPAssignement2API.Controllers
 
 
             }
+        }
+
+        [HttpGet]
+        [Route("{familyId:int}")]
+        public async Task<ActionResult<Family>> GetFamily([FromRoute] int familyId)
+        {
             
+            try
+            {
+
+                Family Family = await familyService.GetFamily(familyId);
+                return Ok(Family);
+
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
             
         }
 
