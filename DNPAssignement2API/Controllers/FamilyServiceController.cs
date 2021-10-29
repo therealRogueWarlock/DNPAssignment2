@@ -60,11 +60,32 @@ namespace DNPAssignement2API.Controllers
             
             
         }
-        
-        
-        
-        
-        
-        
+
+
+
+        [HttpPost]
+        public async Task<ActionResult<Family>> AddFamily([FromBody] Family family)
+        {
+
+            try
+            {
+                await familyService.AddFamily(family);
+
+                return Created($"/{family.FamilyId}", family);
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+
+
+            }
+            
+            
+        }
+
+
     }
 }
