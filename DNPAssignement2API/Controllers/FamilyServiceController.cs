@@ -102,7 +102,87 @@ namespace DNPAssignement2API.Controllers
             }
             
         }
+        
+        
+        [HttpPatch]
+        public async Task<ActionResult<Family>> UpdateFamily([FromBody] Family family)
+        {
 
+            try
+            {
+                await familyService.Update();
+                return null;
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+
+
+            }
+        }
+        
+        [HttpGet]
+        [Route("{adultId:int}")]
+        public async Task<ActionResult<Adult>> GetAdult([FromRoute] int adultId)
+        {
+            try
+            {
+
+                Adult adult = await familyService.GetAdult(adultId);
+                return Ok(adult);
+
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+            
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IList<Family>>> GetAdults()
+        {
+            try
+            {
+
+                IList<Adult> adult = await familyService.GetAdults();
+                return Ok(adult);
+
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+            
+        }
+        
+        
+        [HttpDelete]
+        [Route("{adult:int}")]
+        public async Task<ActionResult> RemoveAdult([FromRoute] int adultId )
+        {
+
+            try
+            {
+                
+                await familyService.RemoveAdult(adultId);
+
+                return Ok($"adult with id: {adultId} was deleted");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
+            
+        }
+
+        
 
     }
 }

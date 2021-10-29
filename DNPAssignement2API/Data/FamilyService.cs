@@ -36,10 +36,13 @@ namespace Blazor_Authentication.Data.Impl
             return _fileContext.Families;
         }
 
+        
         public async Task Update()
         {
             _fileContext.SaveChanges();
         }
+        
+        
         
         public async Task<Family> GetFamily(int familyId)
         {
