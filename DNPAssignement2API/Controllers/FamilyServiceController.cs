@@ -125,7 +125,7 @@ namespace DNPAssignement2API.Controllers
         }
         
         [HttpGet]
-        [Route("{adultId:int}")]
+        [Route("/adult/{adultId:int}")]
         public async Task<ActionResult<Adult>> GetAdult([FromRoute] int adultId)
         {
             try
@@ -143,6 +143,7 @@ namespace DNPAssignement2API.Controllers
         }
 
         [HttpGet]
+        [Route("/adults")]
         public async Task<ActionResult<IList<Family>>> GetAdults()
         {
             try
@@ -161,7 +162,7 @@ namespace DNPAssignement2API.Controllers
         
         
         [HttpDelete]
-        [Route("{adultId:int}")]
+        [Route("/adult/{adultId:int}")]
         public async Task<ActionResult> RemoveAdult([FromRoute] int adultId )
         {
 
