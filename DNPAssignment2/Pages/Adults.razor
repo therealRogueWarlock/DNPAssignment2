@@ -15,7 +15,7 @@
     
     protected override async Task OnInitializedAsync()
     {
-        _adults = familyManager.GetAdults();
+        _adults = await familyManager.GetAdults();
     }
     
 }

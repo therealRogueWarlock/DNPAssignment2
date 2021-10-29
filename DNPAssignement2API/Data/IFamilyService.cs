@@ -1,18 +1,16 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Models;
 
-namespace Blazor_Authentication.Data
+namespace DNPAssignement2API.Data
 {
-    public interface IFamilyManager
+    public interface IFamilyService
     {
         Task AddFamily(Family family);
         Task RemoveFamily(Family family);
         Task<IList<Family>> GetFamilies();
         Task Update();
         Task<Family> GetFamily(int familyId);
-
-        
         
         Task RemoveAdult(int adultId);
         Task<IList<Adult>> GetAdults();

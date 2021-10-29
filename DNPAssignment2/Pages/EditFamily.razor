@@ -110,7 +110,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        familyToEdit = familyManager.GetFamily(FamilyId);
+        familyToEdit = await familyManager.GetFamily(FamilyId);
         _adultsInFamily = familyToEdit.Adults;
         AdultToAdd = new Adult();
     }

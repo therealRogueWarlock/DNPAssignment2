@@ -1,83 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FileData;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
 using Models;
 
 namespace Blazor_Authentication.Data.Impl
 {
     public class FamilyManager : IFamilyManager
     {
-        private FileContext _fileContext;
-
-        
-        
-        public FamilyManager()
+        public Task AddFamily(Family family)
         {
-            _fileContext = new FileContext();
-            Console.WriteLine("commentar");
-        }
-        public void AddFamily(Family family)
-        {
-            _fileContext.Families.Add(family);
-            _fileContext.SaveChanges();
+            throw new NotImplementedException();
         }
 
-        public void RemoveFamily(Family family)
+        public Task RemoveFamily(Family family)
         {
-            _fileContext.Families.Remove(family);
-            _fileContext.SaveChanges();
+            throw new NotImplementedException();
         }
 
-        public IList<Family> GetFamilies()
+        public async Task<IList<Family>> GetFamilies()
         {
-            return _fileContext.Families;
-        }
+            using HttpClient client = new();
 
-        public void Update()
-        {
-            _fileContext.SaveChanges();
-        }
-        
-        public Family GetFamily(int familyId)
-        {
-            return _fileContext.Families.FirstOrDefault(family =>
-                family.FamilyId == familyId);
-        }
+            HttpResponseMessage responseMessage = await client.GetAsync("https://localhost:5003/FamilyService");
 
-        public void RemoveAdult(int adultId)
-        {
-            foreach (Family family in _fileContext.Families)
+            if (!responseMessage.IsSuccessStatusCode)
+                throw new Exception($"{responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+
+            string result = await responseMessage.Content.ReadAsStringAsync();
+
+            IList<Family> families = JsonSerializer.Deserialize<IList<Family>>(result, new JsonSerializerOptions
             {
-                Adult adult = family.Adults.FirstOrDefault(adult =>
-                    adult.Id == adultId);
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
 
-                if (adult != null)
-                {
-                    family.Adults.Remove(adult);
-                    break;
-                }
-            }
+            return families;
             
-            _fileContext.SaveChanges();
         }
 
-        public IList<Adult> GetAdults()
+        public Task Update()
         {
-            List<Adult> _adults = new();
-
-            foreach (var family in _fileContext.Families)
-            {
-                _adults.AddRange(family.Adults);
-            }
-
-            return _adults;
+            throw new NotImplementedException();
         }
 
-        public Adult GetAdult(int id)
+        public Task<Family> GetFamily(int familyId)
         {
-            return GetAdults().FirstOrDefault(adult =>
-                adult.Id == id);
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveAdult(int adultId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IList<Adult>> GetAdults()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Adult> GetAdult(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

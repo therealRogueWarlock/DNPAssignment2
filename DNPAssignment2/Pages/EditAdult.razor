@@ -48,7 +48,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        adultToEdit = familyManager.GetAdult(Id);
+        adultToEdit = await familyManager.GetAdult(Id);
     }
 
     private void Save()
