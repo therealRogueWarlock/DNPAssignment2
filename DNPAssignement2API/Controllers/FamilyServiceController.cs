@@ -161,7 +161,7 @@ namespace DNPAssignement2API.Controllers
         
         
         [HttpDelete]
-        [Route("{adult:int}")]
+        [Route("{adultId:int}")]
         public async Task<ActionResult> RemoveAdult([FromRoute] int adultId )
         {
 
