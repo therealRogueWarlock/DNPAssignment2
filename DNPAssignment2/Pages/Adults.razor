@@ -2,10 +2,13 @@
 @inject IFamilyManager familyManager
 @inherits LayoutComponentBase
 @using AdultContentComponent
-@using Blazor_Authentication.Data
+@using Data
 @using Models
+@using System.Threading
 
 <h3>Adults</h3>
+
+@{ Console.WriteLine("test1 "+Thread.CurrentThread.ManagedThreadId); }
 
 <AdultContent _adults="@_adults"/>
 
@@ -15,7 +18,14 @@
     
     protected override async Task OnInitializedAsync()
     {
+        _adults = new List<Adult>();
+        
         _adults = await familyManager.GetAdults();
+        foreach (var adult in _adults)   
+        {
+            Console.WriteLine(adult.ToString());
+        }
+        
     }
     
 }

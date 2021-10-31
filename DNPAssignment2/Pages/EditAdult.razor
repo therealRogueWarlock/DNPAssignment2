@@ -1,6 +1,6 @@
 ﻿@page "/EditAdult/{Id:int}"
 @using Models
-@using Blazor_Authentication.Data
+@using Data
 <h3>Edit Adult</h3>
 
 @inject IFamilyManager familyManager
@@ -53,7 +53,7 @@ else
 
     private void Save()
     {
-        familyManager.Update();
+        //familyManager.Update(); //FIXME: Jeg er virkelig en dårlig metode ;(((((((((())())()()()()()()()()()()()()()(()()()()()()()()()()()(())()(()(()
         navigationManager.NavigateTo("/Adults");
     }
 

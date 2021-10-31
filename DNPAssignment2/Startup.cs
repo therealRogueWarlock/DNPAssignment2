@@ -1,20 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using Blazor_Authentication.Data;
-using Blazor_Authentication.Data.Impl;
+using Data;
+using Data.Impl;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DNPAssignment2
+using Microsoft.AspNetCore.Components.Authorization;
+
+namespace DNPAssignment1
 {
     public class Startup
     {
@@ -36,6 +31,8 @@ namespace DNPAssignment2
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             
             SetUpPolicies(services);
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,5 +84,7 @@ namespace DNPAssignment2
                 
             });
         }
+        
+        
     }
 }

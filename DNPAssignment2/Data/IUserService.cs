@@ -1,6 +1,7 @@
-﻿using Blazor_Authentication.model;
+﻿
+using Models;
 
-namespace Blazor_Authentication.Data
+namespace Data
 {
     public interface IUserService
     {

@@ -1,7 +1,7 @@
 ﻿@namespace AdultContentComponent 
 
 @using Models
-@using Blazor_Authentication.Data
+@using Data
 @inject IFamilyManager familyManager
 @inject NavigationManager navigationManager
 
@@ -51,9 +51,12 @@ else
         @foreach (var adult in _adultsToShow)
         {
             <tr>
+                @{ Console.WriteLine("JEG ER FUCKING DUM 1"); }
                 <td>@adult.Job.JobTitle</td>
                 <td>@adult.FirstName</td>
                 <td>@adult.LastName</td>
+                 @{ Console.WriteLine("JEG ER FUCKING DUM 1"); }
+
                 <AuthorizeView>
                     <td>
                         <button @onclick="@(() => EditAdult(adult.Id))">
@@ -87,6 +90,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         _adultsToShow = _adults;
+
     }
 
     private void FilterByJobTitle(ChangeEventArgs changeEventArgs)

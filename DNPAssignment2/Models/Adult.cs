@@ -12,6 +12,14 @@ namespace Models
         public Adult()
         {
             Job = new();
+            
+        }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName} ";
         }
     }
+   
+    
 }

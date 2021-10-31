@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Blazor_Authentication.model;
+using Models;
 
-namespace Blazor_Authentication.Data.Impl
+namespace Data.Impl
 {
     public class InMemoryUserService : IUserService
     {

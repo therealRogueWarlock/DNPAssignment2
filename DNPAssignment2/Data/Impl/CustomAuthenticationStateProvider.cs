@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Blazor_Authentication.model;
+using Models;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 
-namespace Blazor_Authentication.Data.Impl
+namespace Data.Impl
 {
     public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {
