@@ -10,21 +10,16 @@
 
 @{ Console.WriteLine("test1 "+Thread.CurrentThread.ManagedThreadId); }
 
-<AdultContent _adults="@_adults"/>
+<AdultContent />
 
 @code {
     
-    private IList<Adult> _adults;
     
     protected override async Task OnInitializedAsync()
     {
-        _adults = new List<Adult>();
         
-        _adults = await familyManager.GetAdults();
-        foreach (var adult in _adults)   
-        {
-            Console.WriteLine(adult.ToString());
-        }
+       //_adults = await familyManager.GetAdults();
+        
         
     }
     

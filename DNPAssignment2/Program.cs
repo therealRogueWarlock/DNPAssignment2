@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace DNPAssignment1
+namespace DNPAssignment2
 {
     public class Program
     {

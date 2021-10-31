@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 
 using Microsoft.AspNetCore.Components.Authorization;
 
-namespace DNPAssignment1
+namespace DNPAssignment2
 {
     public class Startup
     {
@@ -31,7 +31,6 @@ namespace DNPAssignment1
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             
             SetUpPolicies(services);
-            
             
         }
 
