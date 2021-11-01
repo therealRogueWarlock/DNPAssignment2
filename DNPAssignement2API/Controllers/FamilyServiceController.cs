@@ -49,7 +49,7 @@ namespace DNPAssignement2API.Controllers
                 
                 await familyService.RemoveFamily(familyId);
 
-                return Ok($"Familey with id: {familyId}");
+                return Ok($"Family with id: {familyId} was removed");
 
             }
             catch (Exception e)
@@ -105,13 +105,14 @@ namespace DNPAssignement2API.Controllers
         
         
         [HttpPatch]
-        public async Task<ActionResult<Family>> UpdateFamily([FromBody] Family family)
+        public async Task<ActionResult> UpdateFamily([FromBody] Family family)
         {
 
             try
             {
-                await familyService.Update();
-                return null;
+                
+                await familyService.Update(family);
+                return Ok($"Family with id: {family.FamilyId} was updated");
 
             }
             catch (Exception e)
@@ -132,11 +133,13 @@ namespace DNPAssignement2API.Controllers
             {
 
                 Adult adult = await familyService.GetAdult(adultId);
+                
                 return Ok(adult);
 
             }
             catch (Exception e)
             {
+                Console.WriteLine("i failed " + e.Message);
                 return StatusCode(500, e.Message);
             }
             

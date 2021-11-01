@@ -11,13 +11,10 @@ namespace Blazor_Authentication.Data.Impl
     public class FamilyService : IFamilyService
     {
         private FileContext _fileContext;
-
-        
         
         public FamilyService()
         {
             _fileContext = new FileContext();
-            Console.WriteLine("commentar");
         }
         public async Task AddFamily(Family family)
         {
@@ -35,14 +32,13 @@ namespace Blazor_Authentication.Data.Impl
         {
             return _fileContext.Families;
         }
-
         
-        public async Task Update()
+        public async Task Update(Family family)
         {
+            await RemoveFamily(family.FamilyId);
+            await AddFamily(family);
             _fileContext.SaveChanges();
         }
-        
-        
         
         public async Task<Family> GetFamily(int familyId)
         {
@@ -81,8 +77,11 @@ namespace Blazor_Authentication.Data.Impl
 
         public async Task<Adult> GetAdult(int id)
         {
+            
+            
             return GetAdults().Result.FirstOrDefault(adult =>
                 adult.Id == id);
         }
+        
     }
 }

@@ -9,7 +9,7 @@ namespace DNPAssignement2API.Data
         Task AddFamily(Family family);
         Task RemoveFamily(int familyId);
         Task<IList<Family>> GetFamilies();
-        Task Update();
+        Task Update(Family family);
         Task<Family> GetFamily(int familyId);
         
         Task RemoveAdult(int adultId);

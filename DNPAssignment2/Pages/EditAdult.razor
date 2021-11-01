@@ -10,7 +10,7 @@
 
 @if (adultToEdit == null)
 {
-    <em>FAMILY NOT FOUNDNDZNDZ!</em>
+    <em>Adult NOT FOUND!</em>
 }
 else
 {
@@ -49,6 +49,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         adultToEdit = await familyManager.GetAdult(Id);
+        
     }
 
     private void Save()
