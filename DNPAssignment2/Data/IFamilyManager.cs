@@ -16,7 +16,7 @@ namespace Data
         
         Task RemoveAdult(int adultId);
         Task<IList<Adult>> GetAdults();
-        Task<Adult> GetAdult(int id);
+        Task<Adult> GetAdult(int adultId);
         
     }
 }

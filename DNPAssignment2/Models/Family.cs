@@ -17,8 +17,8 @@ namespace Models
         public int FamilyId { get; set; }
         
         public List<Adult> Adults { get; set; }
-        public List<Child> Children { get; set; }
-        public List<Pet> Pets { get; set; }
+        //public List<Child> Children { get; set; }
+        //public List<Pet> Pets { get; set; }
 
         public Family()
         {

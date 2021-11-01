@@ -149,7 +149,7 @@ namespace DNPAssignement2API.Controllers
 
         [HttpGet]
         [Route("/adults")]
-        public async Task<ActionResult<IList<Family>>> GetAdults()
+        public async Task<ActionResult<IList<Adult>>> GetAdults()
         {
             try
             {
