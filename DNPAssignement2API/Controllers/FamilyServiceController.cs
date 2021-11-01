@@ -41,7 +41,7 @@ namespace DNPAssignement2API.Controllers
 
         [HttpDelete]
         [Route("{familyId:int}")]
-        public async Task<ActionResult> removeFamily([FromRoute] int familyId )
+        public async Task<ActionResult> RemoveFamily([FromRoute] int familyId)
         {
 
             try
@@ -133,6 +133,8 @@ namespace DNPAssignement2API.Controllers
             {
 
                 Adult adult = await familyService.GetAdult(adultId);
+                
+                Console.WriteLine("returning adult " + adult );
                 
                 return Ok(adult);
 
