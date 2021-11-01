@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Models;
 
-namespace DNPAssignement2API.Data
+namespace Data
 {
     public interface IFamilyService
     {

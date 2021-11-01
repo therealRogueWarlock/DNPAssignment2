@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DNPAssignement2API.Data;
+using Data;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
-namespace DNPAssignement2API.Controllers
+namespace Controllers
 {
     
     

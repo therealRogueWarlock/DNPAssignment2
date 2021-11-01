@@ -1,4 +1,4 @@
-﻿namespace Blazor_Authentication.model
+﻿namespace Models
 {
     public class User
     {

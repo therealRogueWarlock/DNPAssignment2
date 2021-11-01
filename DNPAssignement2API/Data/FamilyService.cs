@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DNPAssignement2API.Data;
 using FileData;
 using Models;
 
-namespace Blazor_Authentication.Data.Impl
+namespace Data
 {
     public class FamilyService : IFamilyService
     {

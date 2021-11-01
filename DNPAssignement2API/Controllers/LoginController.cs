@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Blazor_Authentication.model;
+using Models;
 using Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DNPAssignement2API.Controllers
+namespace Controllers
 {
 
 
