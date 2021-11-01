@@ -125,7 +125,9 @@ namespace Data.Impl
             HttpResponseMessage responseMessage = await client.GetAsync($"https://localhost:5003/FamilyService/adult/{id}");
 
             if (!responseMessage.IsSuccessStatusCode)
+            {
                 throw new Exception($"{responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            }
 
             string result = await responseMessage.Content.ReadAsStringAsync();
 

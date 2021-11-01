@@ -77,8 +77,7 @@ namespace Blazor_Authentication.Data.Impl
         public async Task<Adult> GetAdult(int id)
         {
             
-            
-            return GetAdults().Result.FirstOrDefault(adult =>
+            return GetAdults().Result.First(adult =>
                 adult.Id == id);
         }
         
