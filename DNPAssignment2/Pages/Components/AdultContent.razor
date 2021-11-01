@@ -76,7 +76,7 @@ else if (_adultsToShow.Any()) {
 
 @code {
     
-    //[Parameter]
+    [Parameter]
     public IList<Adult> _adults { get; set;}
     
     public IList<Adult> _adultsToShow { get; set;}
@@ -87,11 +87,9 @@ else if (_adultsToShow.Any()) {
 
     protected override async Task OnInitializedAsync()
     {
+        _adults ??= await familyManager.GetAdults();
 
-        _adults = await familyManager.GetAdults();
-        
         _adultsToShow = _adults;
-        
     }
 
     private void FilterByJobTitle(ChangeEventArgs changeEventArgs)

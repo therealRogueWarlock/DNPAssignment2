@@ -79,8 +79,7 @@ namespace DNPAssignement2API.Controllers
 
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
-
-
+                
             }
         }
 
@@ -120,7 +119,6 @@ namespace DNPAssignement2API.Controllers
 
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
-
 
             }
         }
