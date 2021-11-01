@@ -62,7 +62,6 @@ else
                         </button>
                     </td>
                 </AuthorizeView>
-                @* <td>@(family.Adults.Any() ? family.Adults.First().LastName : "No adults added")  </td> *@
             </tr>
         }
         </tbody>
@@ -131,6 +130,8 @@ else
     private void RemoveFamily(Family family)
     {
         familyManager.RemoveFamily(family);
+        _families.Remove(family);
+        
     }
 
 }

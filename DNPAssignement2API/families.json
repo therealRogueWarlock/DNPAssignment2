@@ -1,273 +1,8 @@
 [
   {
-    "FamilyId": 1,
-    "StreetName": "Bay Avenue",
-    "HouseNumber": 1,
-    "Adults": [
-      {
-        "Job": {
-          "JobTitle": "Mascot",
-          "Salary": 99821
-        },
-        "Id": 0,
-        "FirstName": "Yasmine",
-        "LastName": "Baxter",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 58,
-        "Weight": 39.8,
-        "Height": 174,
-        "Sex": "F"
-      }
-    ],
-    "Children": [],
-    "Pets": []
-  },
-  {
-    "FamilyId": 2,
-    "StreetName": "Innovation Avenue",
-    "HouseNumber": 1,
-    "Adults": [
-      {
-        "Job": {
-          "JobTitle": "Front End Web Developer",
-          "Salary": 66408
-        },
-        "Id": 1,
-        "FirstName": "Lyla",
-        "LastName": "Humphrey",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 36,
-        "Weight": 64.8,
-        "Height": 147,
-        "Sex": "F"
-      },
-      {
-        "Job": {
-          "JobTitle": "Business Development Manager",
-          "Salary": 71456
-        },
-        "Id": 2,
-        "FirstName": "Samara",
-        "LastName": "Humphrey",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 34,
-        "Weight": 37,
-        "Height": 145,
-        "Sex": "F"
-      }
-    ],
-    "Children": [
-      {
-        "Interests": [
-          {
-            "Type": "Board Games",
-            "Description": "Boardgaming like a family"
-          },
-          {
-            "Type": "Archery",
-            "Description": "Old sport with bow and arrow"
-          },
-          {
-            "Type": "Gaming",
-            "Description": "#PCMASTERRACE"
-          }
-        ],
-        "Pets": [],
-        "Id": 1,
-        "FirstName": "Frederick",
-        "LastName": "Humphrey",
-        "HairColor": "Black",
-        "EyeColor": "Amber",
-        "Age": 10,
-        "Weight": 35,
-        "Height": 155,
-        "Sex": "M"
-      },
-      {
-        "Interests": [
-          {
-            "Type": "Board Games",
-            "Description": "Boardgaming like a family"
-          },
-          {
-            "Type": "Ultimate",
-            "Description": "Chasing flying saucers"
-          }
-        ],
-        "Pets": [],
-        "Id": 2,
-        "FirstName": "Leopold",
-        "LastName": "Humphrey",
-        "HairColor": "Black",
-        "EyeColor": "Blue",
-        "Age": 6,
-        "Weight": 85.1,
-        "Height": 130,
-        "Sex": "M"
-      },
-      {
-        "Interests": [
-          {
-            "Type": "Drawing",
-            "Description": "Or doodling"
-          },
-          {
-            "Type": "Reading",
-            "Description": "Expand your horizon "
-          },
-          {
-            "Type": "Paper Plane Flying",
-            "Description": "Just crumble a paper into a ball and throw it"
-          },
-          {
-            "Type": "Harry Potter",
-            "Description": "Slightly more narrow than book reading"
-          },
-          {
-            "Type": "Gaming",
-            "Description": "#PCMASTERRACE"
-          }
-        ],
-        "Pets": [],
-        "Id": 3,
-        "FirstName": "Chiara",
-        "LastName": "Humphrey",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 15,
-        "Weight": 84.405,
-        "Height": 183,
-        "Sex": "F"
-      }
-    ],
-    "Pets": []
-  },
-  {
-    "FamilyId": 3,
-    "StreetName": "William Street",
-    "HouseNumber": 1,
-    "Adults": [
-      {
-        "Job": {
-          "JobTitle": "Skin Care Specialist",
-          "Salary": 20545
-        },
-        "Id": 3,
-        "FirstName": "Chaya",
-        "LastName": "Mcclure",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 59,
-        "Weight": 32.4,
-        "Height": 167,
-        "Sex": "F"
-      },
-      {
-        "Job": {
-          "JobTitle": "Vice Principal",
-          "Salary": 72901
-        },
-        "Id": 4,
-        "FirstName": "Ophelia",
-        "LastName": "Nathan",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 50,
-        "Weight": 106,
-        "Height": 172,
-        "Sex": "F"
-      }
-    ],
-    "Children": [
-      {
-        "Interests": [
-          {
-            "Type": "Ninja Turtles",
-            "Description": "Young, genetically modified, secret assassin tortoise"
-          },
-          {
-            "Type": "Hockey",
-            "Description": "Not the one on ice"
-          }
-        ],
-        "Pets": [],
-        "Id": 4,
-        "FirstName": "Meredith",
-        "LastName": "Mcclure",
-        "HairColor": "Black",
-        "EyeColor": "Grey",
-        "Age": 24,
-        "Weight": 45.73,
-        "Height": 147,
-        "Sex": "F"
-      },
-      {
-        "Interests": [
-          {
-            "Type": "Frozen",
-            "Description": "Can we let this one go?"
-          }
-        ],
-        "Pets": [],
-        "Id": 5,
-        "FirstName": "Aria",
-        "LastName": "Mcclure",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 5,
-        "Weight": 16.32,
-        "Height": 96,
-        "Sex": "F"
-      },
-      {
-        "Interests": [
-          {
-            "Type": "Choir Singing",
-            "Description": "Aka covey super spreader event"
-          },
-          {
-            "Type": "Bowling",
-            "Description": "Balls to the pins"
-          },
-          {
-            "Type": "Chess",
-            "Description": "The poor die first in war"
-          }
-        ],
-        "Pets": [],
-        "Id": 6,
-        "FirstName": "Reyes",
-        "LastName": "Mcclure",
-        "HairColor": "Grey",
-        "EyeColor": "Brown",
-        "Age": 27,
-        "Weight": 60,
-        "Height": 170,
-        "Sex": "M"
-      }
-    ],
-    "Pets": [
-      {
-        "Id": 0,
-        "Species": "Dog",
-        "Name": "Smokey",
-        "Age": 7
-      },
-      {
-        "Id": 1,
-        "Species": "Cat",
-        "Name": "Piglet",
-        "Age": 13
-      }
-    ]
-  },
-  {
-    "FamilyId": 4,
     "StreetName": "Mitch Cromwood Avenue",
     "HouseNumber": 1,
+    "FamilyId": 4,
     "Adults": [
       {
         "Job": {
@@ -416,9 +151,9 @@
     "Pets": []
   },
   {
-    "FamilyId": 5,
     "StreetName": "Elgin Avenue",
     "HouseNumber": 1,
+    "FamilyId": 5,
     "Adults": [
       {
         "Job": {
@@ -604,9 +339,9 @@
     "Pets": []
   },
   {
-    "FamilyId": 6,
     "StreetName": "Railway Street",
     "HouseNumber": 1,
+    "FamilyId": 6,
     "Adults": [
       {
         "Job": {
@@ -773,9 +508,9 @@
     ]
   },
   {
-    "FamilyId": 7,
     "StreetName": "Airport Avenue",
     "HouseNumber": 1,
+    "FamilyId": 7,
     "Adults": [
       {
         "Job": {
@@ -886,9 +621,9 @@
     ]
   },
   {
-    "FamilyId": 8,
     "StreetName": "Sycamore Drive",
     "HouseNumber": 1,
+    "FamilyId": 8,
     "Adults": [
       {
         "Job": {
@@ -967,9 +702,9 @@
     "Pets": []
   },
   {
-    "FamilyId": 9,
     "StreetName": "Hazlett Avenue",
     "HouseNumber": 1,
+    "FamilyId": 9,
     "Adults": [
       {
         "Job": {
@@ -1125,73 +860,6 @@
         "Weight": 94.2,
         "Height": 160,
         "Sex": "M"
-      }
-    ],
-    "Pets": []
-  },
-  {
-    "FamilyId": 10,
-    "StreetName": "Easy Street",
-    "HouseNumber": 1,
-    "Adults": [
-      {
-        "Job": {
-          "JobTitle": "Call Center Agent",
-          "Salary": 20308
-        },
-        "Id": 14,
-        "FirstName": "Isiah",
-        "LastName": "Esparza",
-        "HairColor": "Brown",
-        "EyeColor": "Brown",
-        "Age": 44,
-        "Weight": 81.8,
-        "Height": 172,
-        "Sex": "M"
-      }
-    ],
-    "Children": [
-      {
-        "Interests": [
-          {
-            "Type": "Hockey",
-            "Description": "Not the one on ice"
-          },
-          {
-            "Type": "Tractors",
-            "Description": "My nephew loves these"
-          },
-          {
-            "Type": "Choir Singing",
-            "Description": "Aka covey super spreader event"
-          },
-          {
-            "Type": "Bowling",
-            "Description": "Balls to the pins"
-          },
-          {
-            "Type": "Ninja Turtles",
-            "Description": "Young, genetically modified, secret assassin tortoise"
-          },
-          {
-            "Type": "Scout",
-            "Description": "Gotta get all the emblems"
-          },
-          {
-            "Type": "Drawing",
-            "Description": "Or doodling"
-          }
-        ],
-        "Pets": [],
-        "Id": 31,
-        "FirstName": "Audriana",
-        "LastName": "Esparza",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 13,
-        "Weight": 45.73,
-        "Height": 157,
-        "Sex": "F"
       }
     ],
     "Pets": []

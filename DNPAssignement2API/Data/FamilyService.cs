@@ -33,7 +33,7 @@ namespace Blazor_Authentication.Data.Impl
             return _fileContext.Families;
         }
         
-        public async Task Update(Family family)
+        public async Task UpdateFamily(Family family)
         {
             await RemoveFamily(family.FamilyId);
             await AddFamily(family);
@@ -77,9 +77,30 @@ namespace Blazor_Authentication.Data.Impl
 
         public async Task<Adult> GetAdult(int id)
         {
-            
             return GetAdults().Result.First(adult =>
                 adult.Id == id);
+        }
+
+        public async Task AddAdult(Adult adult)
+        {
+            GetAdults().Result.Add(adult);
+        }
+        
+        public async Task UpdateAdult(Adult adultToUpdate)
+        {
+            foreach (Family family in _fileContext.Families)
+            {
+                Adult adult = family.Adults.FirstOrDefault(a =>
+                    a.Id == adultToUpdate.Id);
+
+                if (adult != null)
+                {
+                    family.Adults.Remove(adult);
+                    family.Adults.Add(adultToUpdate);
+                    break;
+                }
+            }
+            _fileContext.SaveChanges();
         }
         
     }

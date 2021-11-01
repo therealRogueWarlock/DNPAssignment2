@@ -104,13 +104,14 @@ namespace DNPAssignement2API.Controllers
         
         
         [HttpPatch]
+        [Route("UpdateFamily")]
         public async Task<ActionResult> UpdateFamily([FromBody] Family family)
         {
 
             try
             {
                 
-                await familyService.Update(family);
+                await familyService.UpdateFamily(family);
                 return Ok($"Family with id: {family.FamilyId} was updated");
 
             }
@@ -124,7 +125,7 @@ namespace DNPAssignement2API.Controllers
         }
         
         [HttpGet]
-        [Route("/adult/{adultId:int}")]
+        [Route("adult/{adultId:int}")]
         public async Task<ActionResult<Adult>> GetAdult([FromRoute] int adultId)
         {
             try
@@ -132,8 +133,7 @@ namespace DNPAssignement2API.Controllers
 
                 Adult adult = await familyService.GetAdult(adultId);
                 
-                Console.WriteLine("returning adult " + adult );
-                
+               
                 return Ok(adult);
 
             }
@@ -146,7 +146,7 @@ namespace DNPAssignement2API.Controllers
         }
 
         [HttpGet]
-        [Route("/adults")]
+        [Route("adults")]
         public async Task<ActionResult<IList<Family>>> GetAdults()
         {
             try
@@ -165,7 +165,7 @@ namespace DNPAssignement2API.Controllers
         
         
         [HttpDelete]
-        [Route("/adult/{adultId:int}")]
+        [Route("adult/{adultId:int}")]
         public async Task<ActionResult> RemoveAdult([FromRoute] int adultId )
         {
 
@@ -186,7 +186,26 @@ namespace DNPAssignement2API.Controllers
             
         }
 
-        
+        [HttpPatch]
+        [Route("UpdateAdult")]
+        public async Task<ActionResult> UpdateAdult([FromBody] Adult adult)
+        {
+
+            try
+            {
+                
+                await familyService.UpdateAdult(adult);
+                return Ok($"Adult with id: {adult.Id} was updated");
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+
+            }
+        }
 
     }
 }

@@ -26,12 +26,12 @@ namespace DNPAssignment2
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            
             services.AddScoped<IFamilyManager, FamilyManager>();
-            services.AddScoped<IUserService, InMemoryUserService>();
+            services.AddScoped<IUserService, ApiUserService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             
             SetUpPolicies(services);
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

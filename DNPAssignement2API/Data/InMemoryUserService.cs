@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Blazor_Authentication.model;
 using Models;
 
 namespace Data.Impl
@@ -32,7 +32,7 @@ namespace Data.Impl
             }.ToList();
         }
 
-        public async Task<User> ValidateUser(string userName, string password)
+        public User ValidateUser(string userName, string password)
         {
             User first = users.FirstOrDefault(user => user.UserName.Equals(userName));
             if (first == null)

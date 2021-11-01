@@ -56,18 +56,20 @@ namespace Data.Impl
             
         }
 
-        public async Task Update(Family family)
+        public async Task UpdateFamily(Family family)
         {
             using HttpClient client = new();
 
-            string familyAsJson = JsonSerializer.Serialize(family); //Jeg var engang sej ;((((((((((
+            string familyAsJson = JsonSerializer.Serialize(family); 
 
             StringContent content = new StringContent(
                 familyAsJson,
                 Encoding.UTF8,
                 "application/json"
             );
-            HttpResponseMessage responseMessage = await client.PatchAsync($"https://localhost:5003/FamilyService", content);
+            HttpResponseMessage responseMessage = 
+                await client.PatchAsync($"https://localhost:5003/FamilyService/UpdateFamily", content);
+            
             if (!responseMessage.IsSuccessStatusCode)
                 throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
         }
@@ -103,7 +105,7 @@ namespace Data.Impl
         {
             using HttpClient client = new();
 
-            HttpResponseMessage responseMessage = await client.GetAsync("https://localhost:5003/adults");
+            HttpResponseMessage responseMessage = await client.GetAsync("https://localhost:5003/FamilyService/adults");
 
             if (!responseMessage.IsSuccessStatusCode)
                 throw new Exception($"{responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
@@ -137,6 +139,25 @@ namespace Data.Impl
             });
 
             return adult;
+        }
+
+        public async Task UpdateAdult(Adult adult)
+        {
+            using HttpClient client = new();
+
+            string adultAsJson = JsonSerializer.Serialize(adult); 
+            StringContent content = new StringContent(
+                adultAsJson,
+                Encoding.UTF8,
+                "application/json"
+            );
+            
+            HttpResponseMessage responseMessage = 
+                await client.PatchAsync($"https://localhost:5003/FamilyService/UpdateAdult", content);
+            
+            if (!responseMessage.IsSuccessStatusCode)
+                throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            
         }
     }
 }

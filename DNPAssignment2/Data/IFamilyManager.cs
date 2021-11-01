@@ -9,7 +9,7 @@ namespace Data
         Task AddFamily(Family family);
         Task RemoveFamily(Family family);
         Task<IList<Family>> GetFamilies();
-        Task Update(Family family);
+        Task UpdateFamily(Family family);
         Task<Family> GetFamily(int familyId);
 
         
@@ -17,6 +17,6 @@ namespace Data
         Task RemoveAdult(int adultId);
         Task<IList<Adult>> GetAdults();
         Task<Adult> GetAdult(int id);
-        
+        Task UpdateAdult(Adult adult);
     }
 }

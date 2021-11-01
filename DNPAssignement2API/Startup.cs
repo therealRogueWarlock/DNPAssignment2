@@ -1,10 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Blazor_Authentication.Data.Impl;
+using Data;
+using Data.Impl;
 using DNPAssignement2API.Data;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +37,12 @@ namespace DNPAssignement2API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "DNPAssignement2API", Version = "v1"});
             });
+            
             services.AddSingleton<IFamilyService, FamilyService>();
+            services.AddScoped<IUserService, InMemoryUserService>();
+            
+         
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,5 +63,7 @@ namespace DNPAssignement2API
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
+        
+        
     }
 }
